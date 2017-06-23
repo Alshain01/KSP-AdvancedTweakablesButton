@@ -50,7 +50,9 @@
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
-    <None Include="AdvancedTweakablesButton.version" />
+    <None Include="AdvancedTweakablesButton.version">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Include="Flags\ATBFlag.dds">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
