@@ -6,7 +6,7 @@ namespace AdvancedTweakablesButton
     [KSPAddon(KSPAddon.Startup.FlightAndEditor, true)]
     public class AdvancedTweakablesButton : MonoBehaviour
     {
-        const string path = "AquilaEnterprises/AdvancedTweakablesButton/";
+        const string path = "AquilaEnterprises/AdvancedTweakablesButton/Resources";
 
         static Texture2D offTexture = GameDatabase.Instance.GetTexture(path + "offIcon", false);
         static Texture2D onTexture = GameDatabase.Instance.GetTexture(path + "onIcon", false);
