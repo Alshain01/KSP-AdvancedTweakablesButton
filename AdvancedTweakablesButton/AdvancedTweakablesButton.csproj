@@ -32,7 +32,11 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="AdvancedTweakablesButton.cs" />
+    <Compile Include="AppLauncher.cs" />
+    <Compile Include="IButtonBar.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Toolbar.cs" />
+    <Compile Include="ToolbarWrapper.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="Assembly-CSharp">
@@ -50,20 +54,38 @@
     <None Include="Flags\ATBFlag.dds">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
+    <None Include="Localization\en-us.cfg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Resources\ButtonMaster.pdn" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Licenses\ATB-License.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="Resources\offIcon.png">
+    <None Include="Resources\LauncherOff.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="Resources\onIcon.png">
+    <None Include="Resources\LauncherOn.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Changelog.txt" />
+    <None Include="Changelog.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Licenses\Toolbar-Info.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Licenses\Toolbar-License.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Resources\ToolbarOff.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Resources\ToolbarOn.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
@@ -71,7 +93,7 @@
     </PreBuildEvent>
   </PropertyGroup>
   <PropertyGroup>
-    <PostBuildEvent>xcopy /Y /S "$(TargetDir)*.*" "C:\KSP_win_dev\GameData\AquilaEnterprises\ActionGroupManager\"</PostBuildEvent>
+    <PostBuildEvent>xcopy /Y /S "$(TargetDir)*.*" "C:\KSP_win_dev\GameData\AquilaEnterprises\AdvancedTweakablesButton\"</PostBuildEvent>
   </PropertyGroup>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
