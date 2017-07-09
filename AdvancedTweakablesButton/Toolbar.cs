@@ -1,5 +1,4 @@
-﻿using UnityEngine;
-using KSP.Localization;
+﻿using KSP.Localization;
 
 namespace AdvancedTweakablesButton
 {
@@ -10,6 +9,7 @@ namespace AdvancedTweakablesButton
 
         public Toolbar(string appPath)
         {
+            AdvancedTweakablesButton.AddDebugLog("Generating Toolbar Button");
             onTexture = appPath + onTexture;
             offTexture = appPath + offTexture;
             toolbarButton = ToolbarManager.Instance.add("AdvancedTweakablesButton", "AdvancedTweakablesButton");
@@ -19,8 +19,10 @@ namespace AdvancedTweakablesButton
             toolbarButton.OnClick +=
                 (e) =>
                 {
+                    
                     if (e.MouseButton == 0 && toolbarButton != null)
                     {
+                        AdvancedTweakablesButton.AddDebugLog("Toolbar Left Click");
                         GameSettings.ADVANCED_TWEAKABLES = !GameSettings.ADVANCED_TWEAKABLES;
                         GameSettings.ApplySettings();
                         SetTexture();
@@ -32,7 +34,10 @@ namespace AdvancedTweakablesButton
         public void SetTexture()
         {
             if (toolbarButton != null)
+            {
+                AdvancedTweakablesButton.AddDebugLog("Switching Texture");
                 toolbarButton.TexturePath = GameSettings.ADVANCED_TWEAKABLES ? onTexture : offTexture;
+            }
         }
 
         public void Destroy()
@@ -41,6 +46,7 @@ namespace AdvancedTweakablesButton
             {
                 toolbarButton.Destroy();
                 toolbarButton = null;
+                AdvancedTweakablesButton.AddDebugLog("Toolbar Destroyed");
             }
         }
     }

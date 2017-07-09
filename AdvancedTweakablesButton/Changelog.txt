@@ -1,4 +1,7 @@
-﻿Version 1.0.3 - June 23, 2017
+﻿Version 1.0.4 - July 9, 2017
+* Fix issue where Toolbar button was not created after leaving Flight/Editor scene and returning.
+
+Version 1.0.3 - June 23, 2017
 * Fix Missing Version file
 
 Version 1.0.2 - June 23, 2017
